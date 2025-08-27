@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: java-http
-        image: IMAGE_PLACEHOLDER   # Jenkins will replace this with ECR image
+        image: IMAGE_PLACEHOLDER   # Do NOT put java-http:latest here
         ports:
         - containerPort: 8080
