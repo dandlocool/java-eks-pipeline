@@ -18,12 +18,19 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {
-                sh '''
-                docker build -t java-http:latest .
-                docker tag java-http:latest $ECR_REPO:latest
-                $(aws ecr get-login-password --region $AWS_REGION | docker login --username AWS --password-stdin $ECR_REPO)
-                docker push $ECR_REPO:latest
-                '''
+sh '''
+        # Build Docker image
+        docker build -t java-http:latest .
+
+        # Tag for ECR
+        docker tag java-http:latest $ECR_REPO:latest
+
+        # Login to ECR
+        aws ecr get-login-password --region $AWS_REGION | docker login --username AWS --password-stdin $ECR_REPO
+
+        # Push image
+        docker push $ECR_REPO:latest
+        '''
             }
         }
 
