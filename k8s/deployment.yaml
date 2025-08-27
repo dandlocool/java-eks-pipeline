@@ -13,7 +13,8 @@ spec:
         app: java-http
     spec:
       containers:
-      - name: java-http
-        image: IMAGE_PLACEHOLDER   # Do NOT put java-http:latest here
-        ports:
-        - containerPort: 8080
+  - name: java-http
+    image: IMAGE_PLACEHOLDER   # Jenkins will replace this
+    ports:
+      - containerPort: 8080
+
