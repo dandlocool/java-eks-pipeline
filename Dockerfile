@@ -1,13 +1,12 @@
-# Use full OpenJDK (includes javac)
+# Use full JDK to compile Java
 FROM openjdk:11-jdk-slim
 
-# Set working directory
 WORKDIR /app
 
 # Copy Java file
 COPY SimpleHttpServer.java /app/SimpleHttpServer.java
 
-# Compile Java
+# Compile
 RUN javac SimpleHttpServer.java
 
 # Run the app
