@@ -1,5 +1,5 @@
-# Use lightweight OpenJDK image
-FROM openjdk:11-jre-slim
+# Use full OpenJDK (includes javac)
+FROM openjdk:11-jdk-slim
 
 # Set working directory
 WORKDIR /app
