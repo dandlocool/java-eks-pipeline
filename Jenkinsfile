@@ -1,13 +1,13 @@
 pipeline {
     agent any
 
-    environment {
-        AWS_REGION = 'eu-north-1'           // Your EKS/ECR region
-        DEPLOYMENT_NAME = 'java-http-deploy'
-        SERVICE_NAME = 'java-http-svc'
-        ECR_REPO = '123456789012.dkr.ecr.eu-north-1.amazonaws.com/java-http' // Replace with your ECR URI
-        CLUSTER_NAME = 'java-cluster'
-    }
+environment {
+    AWS_REGION = 'eu-north-1'
+    ECR_REPO = '455896786568.dkr.ecr.eu-north-1.amazonaws.com/java-http'
+    CLUSTER_NAME = 'java-cluster'
+    DEPLOYMENT_NAME = 'java-http-deploy'
+    SERVICE_NAME = 'java-http-svc'
+}
 
     stages {
         stage('Checkout') {
