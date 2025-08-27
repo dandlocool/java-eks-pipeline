@@ -1,13 +1,13 @@
 # Use lightweight OpenJDK image
 FROM openjdk:11-jre-slim
 
-# Copy Java file
-COPY SimpleHttpServer.java /app/SimpleHttpServer.java
-
 # Set working directory
 WORKDIR /app
 
-# Compile Java file
+# Copy Java file
+COPY SimpleHttpServer.java /app/SimpleHttpServer.java
+
+# Compile Java
 RUN javac SimpleHttpServer.java
 
 # Run the app
