@@ -12,7 +12,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/<your-username>/java-eks-pipeline.git'
+                git 'https://github.com/dandlocool/java-eks-pipeline.git'
             }
         }
 
