@@ -3,10 +3,10 @@ kind: Service
 metadata:
   name: java-http-svc
 spec:
-  type: ClusterIP   # Internal only
   selector:
     app: java-http
+  type: ClusterIP   # Change to LoadBalancer if you want external access
   ports:
-  - protocol: TCP
-    port: 8080
-    targetPort: 8080
+    - protocol: TCP
+      port: 8080        # Service port
+      targetPort: 8080  # Container port
