@@ -1,5 +1,14 @@
-FROM openjdk:17-jdk-slim
+# Use lightweight OpenJDK image
+FROM openjdk:11-jre-slim
+
+# Copy Java file
+COPY SimpleHttpServer.java /app/SimpleHttpServer.java
+
+# Set working directory
 WORKDIR /app
-COPY app.jar app.jar
-EXPOSE 8080
-ENTRYPOINT ["java","-jar","app.jar"]
+
+# Compile Java file
+RUN javac SimpleHttpServer.java
+
+# Run the app
+CMD ["java", "SimpleHttpServer"]
